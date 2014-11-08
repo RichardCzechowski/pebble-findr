@@ -8,8 +8,15 @@ $(function(){
   var map;
   var car= '052'
   var aliases={mom: "052", dad: "100"}
-
-  getLoc();
+  $('select').change(function(){
+    newRoute();
+    console.log("change");
+  });
+  newRoute();
+  function newRoute(){
+    getLoc();
+    getData();
+  };
 
   function initialize(carlat, carlon, peblat, peblon) {
     console.log(carlat, carlon, peblat, peblon)
@@ -57,17 +64,17 @@ $(function(){
      });*/
 
   setTimeout(function(){
-    car="052";
-    getData();
-  }, 3000);
+      car="052";
+      getData();
+      }, 3000);
 
   function getData() {
     $.getJSON('https://findrserver.herokuapp.com/cars/'+car, function(data){
-      var obj = jQuery.parseJSON(data)
-      carlat= obj.vehicleinfo[0].data[0].Posn.lat;
-      carlon= obj.vehicleinfo[0].data[0].Posn.lon;
-      initialize(carlat,carlon,parseFloat(peblat),parseFloat(peblon));
-    });
+        var obj = jQuery.parseJSON(data)
+        carlat= obj.vehicleinfo[0].data[0].Posn.lat;
+        carlon= obj.vehicleinfo[0].data[0].Posn.lon;
+        initialize(carlat,carlon,parseFloat(peblat),parseFloat(peblon));
+        });
   }
 
 });

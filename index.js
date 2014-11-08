@@ -26,7 +26,7 @@ app.get("https://findrserver.herokuapp.com/:id", function (req, res){
   request.post('https://api-jp-t-itc.com:443/GetVehicleInfo', {form:{
     developerkey:'40548194aeaa',
     responseformat:'json',
-    vid:'ITCUS_VID_'+req.params.id,
+    vid: req.params.id,
     infoids:'[Posn,VehBehvr]'
 
   }}, function(err, httpResponse, body){
