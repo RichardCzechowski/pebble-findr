@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "My awesome AppGyver Steroids project.",
   "repository": "N/A",
-  "readme":"N/A",
+  "readme": "N/A",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,8 @@
   "license": "none",
   "engines": {
     "steroids": "3.5.0"
+  },
+  "dependencies": {
+    "express": "^4.10.1"
   }
 }

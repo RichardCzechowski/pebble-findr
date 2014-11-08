@@ -1,0 +1,22 @@
+{
+  "name": "Findr",
+  "version": "1.0.0",
+  "description": "Hackathon app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RichardCzechowski/pebble-findr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RichardCzechowski/pebble-findr/issues"
+  },
+  "homepage": "https://github.com/RichardCzechowski/pebble-findr",
+  "dependencies": {
+    "express": "^4.10.1"
+  }
+}
