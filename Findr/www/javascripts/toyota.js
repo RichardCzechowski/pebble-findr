@@ -21,16 +21,26 @@ $(function(){
   google.maps.event.addDomListener(window, 'load', initialize(data));
 
 
-  $("#github-form").on("submit", function(e) {
+  $("#locateCar").on("click", function(e) {
     e.preventDefault();
-    var userName = $(this).find("input[type=text]").val();
+    var carId = $(this).find("input[type=text]").val();
     // Hit GitHub API
 
-    $.ajax("https://api.github.com/users/" + userName, { dataType: 'jsonp' }).then(function(response) {
-      refreshUser(response.data);
-      initialize(response.data);
+    $.ajax({
+      type: "POST",
+      url: "https://api-jp-t-itc.com/GetVehicleInfo",
+      crossDomain: true,
+      data:[{
+        developerkey: 'e862c3949fbe', 
+        responseformat: 'json',
+        vid: 'ITCUS_VID_052',
+        infoids: '[Posn, VehBehvr]'
+      }],
+      dataType: "jsonp",
+      success: function(data){ console.log(data)},
+      error: function(err){console.log(err)}
+    })
     });
-  });
 
   var userSource   = $("#user-template").html();
   var userTemplate = Handlebars.compile(userSource);
@@ -41,4 +51,4 @@ $(function(){
   };
 
 
-    });
+});

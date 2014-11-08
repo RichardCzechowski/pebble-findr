@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf8">
     <meta name="viewport" content="width=device-width">
-    <title>GitHub</title>
+    <title>Findr</title>
 
     <link rel="stylesheet" href="/components/ionic/css/ionic.min.css" />
     <link rel="stylesheet" href="/stylesheets/application.css" />
@@ -28,18 +28,18 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
 <script src="/javascripts/application.js"></script>
-<script src="/javascripts/github.js"></script>
+<script src="/javascripts/toyota.js"></script>
 
 </head>
 <body class="content">
   <div class="container">
-    <h1>GitHub</h1>
+    <h1>FindR</h1>
     <form class="form-inline" role="form" id="github-form">
       <div class="form-group">
         <label class="sr-only" for="exampleInputEmail2">Username</label>
         <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Enter GitHub username" required>
       </div>
-      <button type="submit" class="btn btn-default">Locate</button>
+      <button id="locateCar" type="button" class="btn btn-default">Locate</button>
     </form>
 
     <div id="user-info">
