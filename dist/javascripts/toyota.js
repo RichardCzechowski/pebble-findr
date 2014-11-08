@@ -25,10 +25,7 @@ $(function(){
 
   function GetData() {
   
-    $.getJSON('/public', {
-        key: 'value',
-          otherKey: 'otherValue'
-    }, function(data){
+    $.getJSON('http://localhost:5000/cars/052', function(data){
           console.log(data) // Handles the callback when the data returns
        });
     /*

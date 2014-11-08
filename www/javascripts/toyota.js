@@ -25,17 +25,14 @@ $(function(){
 
   function GetData() {
   
-    $.getJSON('/public', {
-        key: 'value',
-          otherKey: 'otherValue'
-    }, function(data){
+    $.getJSON('http://localhost:5000/cars/052', function(data){
           console.log(data) // Handles the callback when the data returns
+    var lat= data.vehicleinfo[0].data[0].Posn.lat;
+    var lon= data.vehicleinfo[0].data[0].Posn.lon;
+    console.log(lat, lon);
+    initialize(lat, lon);
+
        });
-    /*
-    $.get( "/", function( data ) {
-        console.log(data);
-          alert( "Load was performed." );
-    });*/
   }
 
 
@@ -45,7 +42,7 @@ $(function(){
     //    e.preventDefault();
     //  var carId = $(this).find("input[type=text]").val();
     // Hit GitHub API
-
+/*
     var  vehicleData=  {
       "vehicleinfo": [
         {
@@ -76,10 +73,6 @@ $(function(){
       }
       ]
     };
-
-    var lat= vehicleData.vehicleinfo[0].data[0].Posn.lat;
-    var lon=  vehicleData.vehicleinfo[0].data[0].Posn.lon;
-    console.log(lat, lon);
-    initialize(lat, lon);
+*/
   });
 });
