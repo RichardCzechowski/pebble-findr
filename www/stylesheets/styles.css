@@ -10,7 +10,7 @@ author: bootply.com
 */
 
 html,body {
-	height:100%;
+  height:100%;
     width: 100%;
     background:center no-repeat fixed url('http://i.imgur.com/TY4SgKk.jpg');
     background-size: cover;
@@ -18,16 +18,16 @@ html,body {
 }
 
 .icon-bar {
-	background-color:#fff;
+  background-color:#fff;
 }
 
 .navbar-trans {
-	background-color:#016C9E;
+  background-color:#016C9E;
     color:#fff;
 }
 
 .navbar-trans li>a:hover,.navbar-trans li>a:focus,.navbar-trans li.active {
-	background-color:#4AC8F1;
+  background-color:#4AC8F1;
 }
 
 .navbar-trans a{
@@ -35,14 +35,14 @@ html,body {
 }
 
 .navbar-trans .form-control:focus {
-	border-color: #eee;
-	outline: 0;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(100,100,100,0.6);
-	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(100,100,100,0.6);
+  border-color: #eee;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(100,100,100,0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(100,100,100,0.6);
 }
 
 section {
-	padding-top:70px;  
+  padding-top:70px;  
     padding-bottom:50px; 
     min-height:calc(100% - 1px);
 }
@@ -169,11 +169,11 @@ border-radius: 4px;
 }
   
 .well {
-	border-color:transparent;
+  border-color:transparent;
 }
 
 a.list-group-item.active,[class*='-info'] {
-	background-color: #168ccc;
+  background-color: #168ccc;
     color:#fff;
 }
   
@@ -183,12 +183,13 @@ a.list-group-item.active,[class*='-info'] {
 }
   
 #section2 {
-	background-color: #e5e5ef;
+  background-color: #e5e5ef;
     color:#969696;
 }
   
 section#section2.container-fluid {
     padding: initial !important;
+    display: inline;
 } 
 
 
