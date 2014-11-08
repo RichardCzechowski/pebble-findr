@@ -22,7 +22,7 @@ app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
 })
 
-app.get("/cars/:id", function (req, res){
+app.get("https://findrserver.herokuapp.com/:id", function (req, res){
   request.post('https://api-jp-t-itc.com:443/GetVehicleInfo', {form:{
     developerkey:'40548194aeaa',
     responseformat:'json',

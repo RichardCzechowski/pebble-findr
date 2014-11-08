@@ -34,29 +34,16 @@
 <body class="content">
   <div class="container">
     <h1>FindR</h1>
-    <form class="form-inline" role="form" id="github-form">
       <div class="form-group">
         <label class="sr-only" for="exampleInputEmail2">Username</label>
-        <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Enter GitHub username" required>
+        <input type="text" class="form-control" id="carInput" placeholder="Enter Car number- ex 052" val= "052" required>
       </div>
       <button id="locateCar" type="button" class="btn btn-default">Locate</button>
-    </form>
 
     <div id="user-info">
     </div>
     <div id="map-canvas"></div>
   </div>
 
-  <script id="user-template" type="text/x-handlebars-template">
-    {{#if name}}
-    <div class="lead well">
-      <div>Selfie:<img src="{{avatar_url}}" class="img-responsive"></img></div>
-      <div>Name: <strong>{{name}}</strong></div>
-      <div>Location: <strong>{{location}}</strong></div>
-    </div>
-    {{else}}
-    <div class="alert alert-danger">Not found, dude</div>
-    {{/if}}
-  </script>
 </body>
 </html>
