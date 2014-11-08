@@ -1,5 +1,6 @@
 $(function(){
-  var data;
+  var car = false;
+
   function initialize(lat, lon) {
     var latlng = new google.maps.LatLng(lat,lon);
     var mapOptions = {
@@ -21,62 +22,32 @@ $(function(){
   }
   google.maps.event.addDomListener(window, 'load', initialize(40.730885,-73.997383));
 
-  GetData();
-
-  function GetData() {
-  
+  if (car==true){
+    getData();
+  }
+  else{
+    getLoc();
+  }
+  function getLoc(){
+    navigator.geolocation.getCurrentPosition(getLatLong);
+  }
+  function getLatLong(position){
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+initialize(lat,lon);
+  }
+  function getData() {
     $.getJSON('http://localhost:5000/cars/052', function(data){
-          console.log(data) // Handles the callback when the data returns
-       });
-    /*
-    $.get( "/", function( data ) {
-        console.log(data);
-          alert( "Load was performed." );
-    });*/
+
+      console.log(data) // Handles the callback when the data returns
+      var obj = jQuery.parseJSON(data)
+      var lat= obj.vehicleinfo[0].data[0].Posn.lat;
+      var lon= obj.vehicleinfo[0].data[0].Posn.lon;
+      console.log(lat, lon);
+      initialize(lat, lon);
+
+    });
   }
 
 
-
-
-  $("#locateCar").on("click", function(e) {
-    //    e.preventDefault();
-    //  var carId = $(this).find("input[type=text]").val();
-    // Hit GitHub API
-
-    var  vehicleData=  {
-      "vehicleinfo": [
-        {
-        "vid": "ITCUS_VID_052",
-        "userid": "ITCUS_USERID_052",
-        "data": [
-          {
-          "createtime": "2014-11-08 08:58:58",
-          "Posn": {
-            "MapMtchg": 1,
-            "lat": 37.369038,
-            "lon": -122.03641
-          },
-          "Spd": 23.6,
-          "ALat": -0.7,
-          "ALgt": 0.6,
-          "YawRate": -0.3,
-          "AccrPedlRat": 39,
-          "BrkIndcr": 0,
-          "SteerAg": -1,
-          "TrsmGearPosn": "D",
-          "EngN": 1590,
-          "OdoDst": 6854,
-          "DrvgMod": 0,
-          "EcoDrvgSts": 3
-        }
-        ]
-      }
-      ]
-    };
-
-    var lat= vehicleData.vehicleinfo[0].data[0].Posn.lat;
-    var lon=  vehicleData.vehicleinfo[0].data[0].Posn.lon;
-    console.log(lat, lon);
-    initialize(lat, lon);
-  });
 });
