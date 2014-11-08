@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width">
+    <title>Findr</title>
+
+    <link rel="stylesheet" href="/components/ionic/css/ionic.min.css" />
+    <link rel="stylesheet" href="/stylesheets/application.css" />
+
+    <script src="/javascripts/onerror.js"></script>
+    <script src="/javascripts/console.log.js"></script>
+
+    <style type="text/css">
+      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+      #map-canvas { height: 20em; }
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAogXNeW_wlYi12s9L99o4CwlLAhD7S5y0"> </script>
+    <script type="text/javascript">
+</script>
+
+<!-- cordova.js is served from localhost to ensure the correct version -->
+<script src="http://localhost/cordova.js"></script>
+<script src="/components/steroids-js/steroids.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/toyota.js"></script>
+
+</head>
+<body class="content">
+  <div class="container">
+    <h1>FindR</h1>
+    <form class="form-inline" role="form" id="github-form">
+      <div class="form-group">
+        <label class="sr-only" for="exampleInputEmail2">Username</label>
+        <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Enter GitHub username" required>
+      </div>
+      <button id="locateCar" type="button" class="btn btn-default">Locate</button>
+    </form>
+
+    <div id="user-info">
+    </div>
+    <div id="map-canvas"></div>
+  </div>
+
+  <script id="user-template" type="text/x-handlebars-template">
+    {{#if name}}
+    <div class="lead well">
+      <div>Selfie:<img src="{{avatar_url}}" class="img-responsive"></img></div>
+      <div>Name: <strong>{{name}}</strong></div>
+      <div>Location: <strong>{{location}}</strong></div>
+    </div>
+    {{else}}
+    <div class="alert alert-danger">Not found, dude</div>
+    {{/if}}
+  </script>
+</body>
+</html>

@@ -1,30 +1,25 @@
 {
-  "name": "node-js-sample",
-  "version": "0.1.0",
-  "description": "A sample Node.js app using Express 4",
+  "name": "mySteroidsProject",
+  "version": "0.0.1",
+  "description": "My awesome AppGyver Steroids project.",
+  "repository": "N/A",
+  "readme": "N/A",
+  "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "devDependencies": {
+    "grunt-steroids": "0.x"
+  },
+  "license": "none",
+  "engines": {
+    "steroids": "3.5.0"
   },
   "dependencies": {
-    "express": "^4.0.0",
+    "express": "^4.10.1",
     "request": "*"
-  },
-  "engines": {
-    "node": "0.10.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/heroku/node-js-sample"
-  },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "author": "Mark Pundsack",
-  "contributors": [
-    "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)"
-  ],
-  "license": "MIT"
+  }
 }
