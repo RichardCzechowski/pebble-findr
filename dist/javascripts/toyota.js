@@ -7,6 +7,7 @@ $(function(){
   var directionsService = new google.maps.DirectionsService();
   var map;
   var car= '052'
+  var aliases={mom: "052", dad: "100"}
 
   getLoc();
 
@@ -39,18 +40,27 @@ $(function(){
       }
     });
   }
+
   function getLoc(){
     navigator.geolocation.getCurrentPosition(getLatLon);
   }
+
   function getLatLon(position){
     peblat = position.coords.latitude;
     peblon = position.coords.longitude;
   }
-  $('#locateCar').on('click', function(){
-    car = $('#carInput').val();
-    console.log(car)
+
+  /* $('#locateCar').on('click', function(){
+     car = $('#carInput').val();
+     console.log(car)
+     getData();
+     });*/
+
+  setTimeout(function(){
+    car="052";
     getData();
-  });
+  }, 3000);
+
   function getData() {
     $.getJSON('https://findrserver.herokuapp.com/cars/'+car, function(data){
       var obj = jQuery.parseJSON(data)
