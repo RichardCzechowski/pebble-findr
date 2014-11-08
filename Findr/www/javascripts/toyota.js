@@ -40,7 +40,6 @@ infoids: '[Posn, VehBehvr]'
 success: function(data){ console.log(data)},
 error: function(err){console.log(err)}
 })
-});
 
 var userSource   = $("#user-template").html();
 var userTemplate = Handlebars.compile(userSource);
