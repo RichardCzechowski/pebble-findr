@@ -7,7 +7,6 @@ $(function(){
   var directionsService = new google.maps.DirectionsService();
   var map;
   var car= '052'
-  var aliases={mom: "052", dad: "100"}
   $('select').change(function(){
     newRoute();
     console.log("change");
